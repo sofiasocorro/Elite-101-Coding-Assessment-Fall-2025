@@ -13,16 +13,16 @@ for values in contacts.values():
 
 
 ############## VERSION 3
-'''for values in library_books():
+for values in library_books():
     if values == True:
         def description_book1():
             print(library_books[0]["id"])
             print(library_books[0]["title"])
             print(library_books[0]["author"])
 
-        description_book1()'''
+        description_book1()
 
-'''available_books = "available"
+available_books = "available"
 
 try:
     for books in library_books:
@@ -30,7 +30,7 @@ try:
             print(f'Book Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
 
 except Exception as e:
-    print(f'No books available: {e}')'''
+    print(f'No books available: {e}')
 
 
 
