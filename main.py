@@ -4,7 +4,61 @@ from datetime import datetime, timedelta
 # -------- Level 1 --------
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
+def description_book1():
+    print(library_books[0]["id"])
+    print(library_books[0]["title"])
+    print(library_books[0]["author"])
 
+description_book1()
+
+def description_book2():
+    print(library_books[1]["id"])
+    print(library_books[1]["title"])
+    print(library_books[1]["author"])
+
+description_book2()
+
+def description_book3():
+    print(library_books[2]["id"])
+    print(library_books[2]["title"])
+    print(library_books[2]["author"])
+
+description_book3()
+
+def description_book4():
+    print(library_books[3]["id"])
+    print(library_books[3]["title"])
+    print(library_books[3]["author"])
+
+description_book4()
+
+def description_book5():
+    print(library_books[4]["id"])
+    print(library_books[4]["title"])
+    print(library_books[4]["author"])
+
+description_book5()
+
+def description_book6():
+    print(library_books[5]["id"])
+    print(library_books[5]["title"])
+    print(library_books[5]["author"])
+
+description_book6()
+
+def description_book7():
+    print(library_books[6]["id"])
+    print(library_books[6]["title"])
+    print(library_books[6]["author"])
+
+description_book7()
+
+def description_book8():
+    print(library_books[7]["id"])
+    print(library_books[7]["title"])
+    print(library_books[7]["author"])
+
+description_book8()
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
