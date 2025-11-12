@@ -20,7 +20,18 @@ except Exception as e:
 # Search should be case-insensitive
 # Return a list of matching books
 
+search_books = input("Please type author's name or book genre: ")
 
+
+search_books = "book"
+
+try:
+    for books in library_books:
+        if isinstance(books,dict) and books.get(search_books) is #IDK:
+            print(f'Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
+
+except Exception as e:
+    print(f'No books available: {e}')
 
 
 
