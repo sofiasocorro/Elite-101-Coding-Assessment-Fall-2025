@@ -23,16 +23,31 @@ except Exception as e:
 search_books = input("Please type author's name or book genre: ")
 
 
-search_books = "book"
+revised_book = search_books.upper
+
+book_genre = "genre"
+
+#print(user_data[0]['name'])
 
 try:
-    for books in library_books:
-        if isinstance(books,dict) and books.get(search_books) is #IDK:
-            print(f'Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
+    for genre in library_books:
+        if revised_book and genre.get(book_genre) == "Fantasy" :
+            print(f'Fantasy Books Available: {(library_books[0])}')
 
 except Exception as e:
     print(f'No books available: {e}')
 
+
+
+'''
+try:
+    for books in library_books:
+        if isinstance(books,dict) and books.get(search_books) == revised_book:
+            print(f'Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
+
+except Exception as e:
+    print(f'No books available: {e}')
+'''
 
 
 
