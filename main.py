@@ -28,7 +28,7 @@ except Exception as e:
 book_genre = "genre"
 book_author = "author"
 
-for search in library_books:
+'''for search in library_books:
     search_books = input("Please type author's name or book genre: ").upper
 
     if search_books and search.get(book_genre) == "Fantasy" :
@@ -39,8 +39,22 @@ for search in library_books:
         print('runs')
         
     else:
-        print('not working')
-        
+        print('not working')'''
+
+while True:      
+    search_books = input("Please type author's name or book genre: ").strip().lower()
+    found = False
+
+
+    for book in library_books:
+        if (search_books == book[book_genre].lower() or search_books == book[book_author].lower()):
+            print(f'Title: {book['title']} by {book['author']}, Available: {book['available']}')
+            found = True
+
+    if not found:
+        print("Please only type the author's name or book genre")
+
+
 
 #except Exception as e:
     #print(f'No books available: {e}')
