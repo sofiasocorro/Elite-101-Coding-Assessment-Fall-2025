@@ -20,47 +20,24 @@ except Exception as e:
 # Search should be case-insensitive
 # Return a list of matching books
 
-#print(user_data[0]['name'])
-
-#try:
-    #for books in library_books:
-
 book_genre = "genre"
 book_author = "author"
 
-'''for search in library_books:
-    search_books = input("Please type author's name or book genre: ").upper
+#loop: search
+search_books = input("Please type author's name or book genre: ").strip().lower()
+found = False
 
-    if search_books and search.get(book_genre) == "Fantasy" :
-        print(f'Title: {(library_books[0]['title'])} by {(library_books[0]['author'])}, Available: {library_books[0]['available']}')
-        print(f'Title: {(library_books[5]['title'])} by {(library_books[5]['author'])}, Available: {library_books[5]['available']}')
-                
-    if search_books and search.get(book_genre) == "Historical" :
-        print('runs')
-        
-    else:
-        print('not working')'''
-
-while True:      
-    search_books = input("Please type author's name or book genre: ").strip().lower()
-    found = False
-
-
-    for book in library_books:
-        if (search_books == book[book_genre].lower() or search_books == book[book_author].lower()):
-            print(f'Title: {book['title']} by {book['author']}, Available: {book['available']}')
-            found = True
+#search for authors or genre
+for book in library_books:
+    if (search_books == book[book_genre].lower() or search_books == book[book_author].lower()):
+        print(f'{book['title']} by {book['author']}, ID: {book['id']}, Available: {book['available']}')
+        found = True
 
     if not found:
-        print("Please only type the author's name or book genre")
+        print("\nPlease only type the author's name or book genre")
+    
 
-
-
-#except Exception as e:
-    #print(f'No books available: {e}')
-
-
-
+        
     
 
 
@@ -73,6 +50,31 @@ while True:
 # If it is not available:
 #   - Print a message saying it's already checked out
 
+
+def checkout_book(book_id):
+    book_id = book_id.lower()
+    
+    for book in library_books:
+        if book['id'].lower() == book_id:
+
+            if not book['available']:
+                print(f'\n{book['title']} is already checked out, will be back on {book['due_date']}')
+                return
+            
+
+            #IF AVAILABLE
+            book['available'] = False
+            due_date = datetime.today() + timedelta(days = 14)
+            book['due_date'] = due_date.strftime('%Y-%m-%d')
+            book['checkouts'] +=1
+
+            print(f'\n{book['title']} by {book['author']} is checked out by you \n Due date: {book['due_date']}')
+            return
+        
+        print('Book ID not found')
+
+book_checkout = input('\nPlease enter book ID to checkout: ').strip()
+checkout_book(book_checkout)
 
 # -------- Level 4 --------
 # TODO: Create a function to return a book by ID
