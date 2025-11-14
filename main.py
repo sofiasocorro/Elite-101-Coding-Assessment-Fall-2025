@@ -10,7 +10,7 @@ available_books = "available"
 try:
     for books in library_books:
         if isinstance(books,dict) and books.get(available_books) is True:
-            print(f'Book Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
+            print(f'Book Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}\n')
 
 except Exception as e:
     print(f'No books available: {e}')
@@ -20,36 +20,34 @@ except Exception as e:
 # Search should be case-insensitive
 # Return a list of matching books
 
-search_books = input("Please type author's name or book genre: ")
-
-
-revised_book = search_books.upper
-
-book_genre = "genre"
-
 #print(user_data[0]['name'])
 
-try:
-    for genre in library_books:
-        if revised_book and genre.get(book_genre) == "Fantasy" :
-            print(f'Fantasy Books Available: {(library_books[0])}')
+#try:
+    #for books in library_books:
 
-except Exception as e:
-    print(f'No books available: {e}')
+book_genre = "genre"
+book_author = "author"
+
+for search in library_books:
+    search_books = input("Please type author's name or book genre: ").upper
+
+    if search_books and search.get(book_genre) == "Fantasy" :
+        print(f'Title: {(library_books[0]['title'])} by {(library_books[0]['author'])}, Available: {library_books[0]['available']}')
+        print(f'Title: {(library_books[5]['title'])} by {(library_books[5]['author'])}, Available: {library_books[5]['available']}')
+                
+    if search_books and search.get(book_genre) == "Historical" :
+        print('runs')
+        
+    else:
+        print('not working')
+        
+
+#except Exception as e:
+    #print(f'No books available: {e}')
 
 
 
-'''
-try:
-    for books in library_books:
-        if isinstance(books,dict) and books.get(search_books) == revised_book:
-            print(f'Available: {books.get('id')}, Title: {books.get('title')}, Author: {books.get('author')}')
-
-except Exception as e:
-    print(f'No books available: {e}')
-'''
-
-
+    
 
 
 # -------- Level 3 --------
@@ -85,3 +83,82 @@ except Exception as e:
 if __name__ == "__main__":
     # You can use this space to test your functions
     pass
+
+
+
+'''
+library_books = [
+    {
+        "id": "B1",
+        "title": "The Lightning Thief",
+        "author": "Rick Riordan",
+        "genre": "Fantasy",
+        "available": True,
+        "due_date": None,
+        "checkouts": 2
+    },
+    {
+        "id": "B2",
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "genre": "Historical",
+        "available": False,
+        "due_date": "2025-11-01",
+        "checkouts": 5
+    },
+    {
+        "id": "B3",
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "genre": "Classic",
+        "available": True,
+        "due_date": None,
+        "checkouts": 3
+    },
+    {
+        "id": "B4",
+        "title": "1984",
+        "author": "George Orwell",
+        "genre": "Dystopian",
+        "available": True,
+        "due_date": None,
+        "checkouts": 4
+    },
+    {
+        "id": "B5",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "genre": "Romance",
+        "available": True,
+        "due_date": None,
+        "checkouts": 6
+    },
+    {
+        "id": "B6",
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "genre": "Fantasy",
+        "available": False,
+        "due_date": "2025-11-10",
+        "checkouts": 8
+    },
+    {
+        "id": "B7",
+        "title": "Fahrenheit 451",
+        "author": "Ray Bradbury",
+        "genre": "Science Fiction",
+        "available": True,
+        "due_date": None,
+        "checkouts": 1
+    },
+    {
+        "id": "B8",
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "genre": "Coming-of-Age",
+        "available": False,
+        "due_date": "2025-11-12",
+        "checkouts": 3
+    }
+]
+'''
